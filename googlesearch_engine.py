@@ -20,12 +20,7 @@ r= requests.get(url, params=param, headers=headers)
 soup = BeautifulSoup(r.text, "html.parser")
 
 results = soup.find("div", {"id": "main"})
-#filesw = open("google_search.html", "w+", encoding="utf-8")
-#filesw.write(str(results))
-#results = soup.find("div", {"class": "eqAnXb"})
 links = results.find_all("div", {"class": "egMi0 kCrYT"})
-#print(str(links))
-#links = results.findAll("a", "href")
 
 for item in links:
     item_text = item.find("div").text
